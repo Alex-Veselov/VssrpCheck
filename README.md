@@ -1,6 +1,6 @@
-# Smartphone sourcing service
+# Phone sourcing service
 
-This project is undertaken to develop smartphone sourcing service
+This project is undertaken to develop phone sourcing service
 REST-service for university work
 
 ## Goals
