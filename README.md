@@ -14,11 +14,13 @@ Develop two endpoint:
 
 1. CRUD operation for each entity.
 
-2. ...
+2. To get the total cost of all orders of one user:
+    - The user id is passed as a parameter
 
-3. ...
+3. To get the complete order information:
+    - The order id is passed as a parameter
 
-## Schema Description
+## Database Description
 
 ### Tables
 
