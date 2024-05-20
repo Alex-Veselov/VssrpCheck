@@ -1,7 +1,7 @@
 package com.service.Models;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Orders")
@@ -24,8 +24,7 @@ public class Order {
     private Double totalPrice;
 
     @Column(name = "PostingDate", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date postingDate;
+    private LocalDate postingDate;
 
     @ManyToOne
     @JoinColumn(name = "UserID", insertable = false, updatable = false)
@@ -39,7 +38,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Integer userId, Integer phoneId, Integer quantity, Date postingDate) {
+    public Order(Integer userId, Integer phoneId, Integer quantity, LocalDate postingDate) {
         this.userId = userId;
         this.phoneId = phoneId;
         this.quantity = quantity;
@@ -82,11 +81,11 @@ public class Order {
         return totalPrice;
     }
 
-    public Date getPostingDate() {
+    public LocalDate getPostingDate() {
         return postingDate;
     }
 
-    public void setPostingDate(Date postingDate) {
+    public void setPostingDate(LocalDate postingDate) {
         this.postingDate = postingDate;
     }
 
