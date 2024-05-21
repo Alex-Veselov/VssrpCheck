@@ -6,9 +6,12 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,6 +36,25 @@ public class OrderController extends BaseController<Order, Long> {
         this.userRepository = userRepository;
         this.phoneRepository = phoneRepository;
     }
+
+    @PostMapping
+    @Override
+    public ResponseEntity<Order> create(@RequestBody Order order) {
+        Optional<Phone> optionalPhone = phoneRepository.findById(order.getPhoneId());
+        if (optionalPhone.isPresent()) {
+            Phone phone = optionalPhone.get();
+
+            if (phone.getAvailability()) {
+                Order createdEntity = orderRepository.save(order);
+                return ResponseEntity.status(HttpStatus.CREATED).body(createdEntity);
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
 
     @GetMapping("/total-price/{userId}")
     public ResponseEntity<Double> getTotalCostForUser(@PathVariable Long userId) {
@@ -81,5 +103,5 @@ public class OrderController extends BaseController<Order, Long> {
         }
     }
 
-    
+
 }
