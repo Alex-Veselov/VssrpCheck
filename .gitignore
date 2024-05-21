@@ -3,3 +3,4 @@ target/
 Makefile
 logs/
 todo.txt
+src/main/resources/keystore
