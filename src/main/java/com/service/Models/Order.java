@@ -12,10 +12,10 @@ public class Order {
     private Long id;
 
     @Column(name = "UserID", nullable = false)
-    private Integer userId;
+    private Long userId;
 
     @Column(name = "PhoneID", nullable = false)
-    private Integer phoneId;
+    private Long phoneId;
 
     @Column(nullable = false)
     private Integer quantity;
@@ -38,7 +38,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Integer userId, Integer phoneId, Integer quantity, LocalDate postingDate) {
+    public Order(Long userId, Long phoneId, Integer quantity, LocalDate postingDate) {
         this.userId = userId;
         this.phoneId = phoneId;
         this.quantity = quantity;
@@ -51,19 +51,19 @@ public class Order {
         return id;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public Integer getPhoneId() {
+    public Long getPhoneId() {
         return phoneId;
     }
 
-    public void setPhoneId(Integer phoneId) {
+    public void setPhoneId(Long phoneId) {
         this.phoneId = phoneId;
         calculateTotalPrice();
     }
