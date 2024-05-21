@@ -9,7 +9,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "UserID", nullable = false)
     private Integer userId;
@@ -47,7 +47,7 @@ public class Order {
     }
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

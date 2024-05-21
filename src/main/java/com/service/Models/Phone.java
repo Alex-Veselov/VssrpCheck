@@ -1,10 +1,6 @@
 package com.service.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Phones")
@@ -12,16 +8,22 @@ public class Phone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "ID")
+    private Long id;
 
+    @Column(name = "Brand")
     private String brand;
 
+    @Column(name = "Model")
     private String model;
 
+    @Column(name = "Price")
     private Double price;
 
+    @Column(name = "Description")
     private String description;
 
+    @Column(name = "Availability")
     private Boolean availability;
 
     // Конструкторы, геттеры и сеттеры
@@ -37,7 +39,7 @@ public class Phone {
         this.availability = availability;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
