@@ -1,4 +1,4 @@
-package com.service.Config;
+package com.service.Configs;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
