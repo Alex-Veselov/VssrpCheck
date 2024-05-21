@@ -1,5 +1,9 @@
 # Phone sourcing service
 
+---
+
+## About
+
 This project is undertaken to develop phone sourcing service
 REST-service for university work
 
@@ -49,3 +53,24 @@ Develop two endpoint:
 
 - Relationship between User and Order: One-to-many.
 - Relationship between Phone and Order: One-to-many.
+
+## Example command to run
+
+
+#### Linux
+
+```
+set SPRING_DATASOURCE_USERNAME="database-username"
+set SPRING_DATASOURCE_PASSWORD="database-password"
+set SERVER_SSL_KEY_STORE_PASSWORD="ssl-key-password"
+java -jar target\phone-sourcing-service-1.0.0-SNAPSHOT.jar
+```
+
+#### Windows
+
+```
+SPRING_DATASOURCE_USERNAME="database-username"   \
+SPRING_DATASOURCE_PASSWORD="database-password"   \
+SERVER_SSL_KEY_STORE_PASSWORD="ssl-key-password" \
+java -jar target/phone-sourcing-service-1.0.0-SNAPSHOT.jar
+```
