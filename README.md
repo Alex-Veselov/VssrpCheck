@@ -57,7 +57,7 @@ Develop two endpoint:
 ## Example command to run
 
 
-#### Linux
+#### Windows
 
 ```
 set SPRING_DATASOURCE_USERNAME="database-username"
@@ -66,7 +66,7 @@ set SERVER_SSL_KEY_STORE_PASSWORD="ssl-key-password"
 java -jar target\phone-sourcing-service-1.0.0-SNAPSHOT.jar
 ```
 
-#### Windows
+#### Linux
 
 ```
 SPRING_DATASOURCE_USERNAME="database-username"   \
