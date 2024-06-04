@@ -4,3 +4,5 @@ Makefile
 logs/
 todo.txt
 src/main/resources/keystore
+user-test.txt
+phone-test.txt
